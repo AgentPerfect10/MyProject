@@ -43,8 +43,7 @@
             mysqli_stmt_bind_rsult($searchpp);
             mysqli_stmt_fetch($stmt);
             mysqli_stmt_close($stmt);
-
-            echo $searchpp;
+            
         ?>
         <input type="text" name="s" id="addinput" placeholder="Size of the product" autocomplete="off" required>
         <select name="unit" id="unit">

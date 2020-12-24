@@ -1,8 +1,9 @@
 <html>
 <head>
+    <script src="../extension/main.js"></script>
 <script>
     const xhr = new XMLHttpRequest();
-function showResult(str) {
+    function showResult(str) {
     if (str.length == "") {
         document.getElementById("livesearch").innerHTML = "";
         document.getElementById("livesearch").style.border="0px";
@@ -10,9 +11,10 @@ function showResult(str) {
     }
     xhr.onreadystatechange=function() {
         if (this.readyState==4 && this.status==200) {
-        document.getElementById("livesearch").innerHTML = this.responseText;
+        var x = document.getElementById("livesearch");
+        x.innerHTML = this.responseText;
         document.getElementById("livesearch").style.border="1px solid #A5ACB2";
-        }
+        } 
     }
     xhr.open("GET","test.php?q="+str,true);
     console.clear();
